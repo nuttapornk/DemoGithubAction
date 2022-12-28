@@ -12,7 +12,7 @@ jobs:
         with:
           dotnet-version: 6.0.x
       - name: Restore NuGet packages
-        run: dotnet restore
+        run: dotnet restore src/DemoGighubAction.WebApi/
       - name: Build and Test
         run: |
           dotnet build
