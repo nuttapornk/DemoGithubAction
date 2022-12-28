@@ -22,7 +22,7 @@ jobs:
 
       - name: Publish        
         run: |
-          mkdir app
+          mkdir /app
           dotnet publish src/DemoGighubAction.WebApi/ -c Release -o /app/publish
       
       - name: Login to Docker Hub
