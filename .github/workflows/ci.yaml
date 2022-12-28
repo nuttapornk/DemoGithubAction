@@ -1,0 +1,13 @@
+name: demo-github-ci
+
+on: push
+
+jobs:
+
+  build:
+    uses: ./.github/workflows/build.yaml
+    secrets:
+      DOCKERHUB_USERNAME: ${{ secrets.DOCKERHUB_USERNAME }}
+      DOCKERHUB_PASSWORD: ${{ secrets.DOCKERHUB_PASSWORD }}
+    with:
+      imagename: demo-github-ci
