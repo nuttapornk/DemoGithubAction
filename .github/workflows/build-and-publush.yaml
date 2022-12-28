@@ -1,0 +1,33 @@
+name: build-and-publish
+
+on: push
+
+jobs:
+  build:
+    runs-on: ubuntu-22.04
+
+    steps:
+      - uses: actions/checkout@v2
+      - name: Set up .NET
+        uses: actions/setup-dotnet@v2
+        with:
+          dotnet-version: 6.0.x
+
+      - name: Restore NuGet packages
+        run: dotnet restore
+
+      - name: Build and Test
+        run: |
+          dotnet build
+          dotnet test
+      - name: Publish
+        run: dotnet publish -c Release -o output           
+    
+      #- name: Publish image to Docker Hub
+      #  uses: docker/build-push-action@v2
+      #  with:          
+      #    username: ${{ secrets.DOCKER_HUB_USERNAME }}
+      #    password: ${{ secrets.DOCKER_HUB_PASSWORD }}
+      #    registry: docker.io
+      #    repository: myrepo/myimage
+      #    tags: latest
