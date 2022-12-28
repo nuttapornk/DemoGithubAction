@@ -21,8 +21,7 @@ jobs:
           dotnet test src/DemoGighubAction.WebApi/
 
       - name: Publish        
-        run: |
-          USER root
+        run: |          
           mkdir -p /app
           dotnet publish src/DemoGighubAction.WebApi/ -c Release -o /app/publish
       
