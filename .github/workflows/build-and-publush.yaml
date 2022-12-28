@@ -23,11 +23,11 @@ jobs:
       - name: Publish
         run: dotnet publish src/DemoGighubAction.WebApi/ -c Release -o output           
     
-      #- name: Publish image to Docker Hub
-      #  uses: docker/build-push-action@v2
-      #  with:          
-      #    username: ${{ secrets.DOCKER_HUB_USERNAME }}
-      #    password: ${{ secrets.DOCKER_HUB_PASSWORD }}
-      #    registry: docker.io
-      #    repository: myrepo/myimage
-      #    tags: latest
+      - name: Publish image to Docker Hub
+        uses: docker/build-push-action@v2
+        with:          
+          username: ${{ secrets.DOCKER_HUB_USERNAME }}
+          password: ${{ secrets.DOCKER_HUB_PASSWORD }}
+          registry: docker.io
+          repository: nuttaporn1449/demo
+          tags: latest
