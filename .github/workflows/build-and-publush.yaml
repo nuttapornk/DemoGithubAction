@@ -19,8 +19,9 @@ jobs:
         run: |
           dotnet build src/DemoGighubAction.WebApi/
           dotnet test src/DemoGighubAction.WebApi/
+
       - name: Publish
-        run: dotnet publish -c Release -o output           
+        run: dotnet publish src/DemoGighubAction.WebApi/ -c Release -o output           
     
       #- name: Publish image to Docker Hub
       #  uses: docker/build-push-action@v2
