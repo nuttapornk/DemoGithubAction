@@ -46,7 +46,10 @@ WORKDIR /app
 COPY --from=builder /app/out .
 
 # Set URL that App will be exposed
-ENV ASPNETCORE_URLS="http://*:5000"
+#ENV ASPNETCORE_URLS="http://*:5000"
+
+EXPOSE 80
+EXPOSE 443
 
 # sets entry point command to automatically 
 # run application on `docker run`
