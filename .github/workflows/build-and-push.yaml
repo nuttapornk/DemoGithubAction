@@ -27,7 +27,7 @@ jobs:
         push: true
         context: ./src/DemoGighubAction.WebApi
         file: ./src/DemoGighubAction.WebApi/Dockerfile
-        tags: nuttaporn1449/demo:${GITHUB_REF##*/}
+        tags: nuttaporn1449/demo:$GITHUB_REF
         labels: ${{ steps.meta.outputs.labels }}
     # -
     #   name: Image digest
