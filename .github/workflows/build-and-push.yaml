@@ -29,7 +29,7 @@ jobs:
         push: true
         context: ./src/DemoGighubAction.WebApi
         file: ./src/DemoGighubAction.WebApi/Dockerfile
-        tags: nuttaporn1449/demo:latest,nuttaporn1449/demo:${{ env.BRANCH }}
+        tags: nuttaporn1449/demo:latest,nuttaporn1449/demo:1.0.0
         labels: ${{ steps.meta.outputs.labels }}
     # -
     #   name: Image digest
